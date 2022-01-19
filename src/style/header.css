@@ -1,0 +1,43 @@
+.header_content {
+    background-color: #362222;
+    display: flex;
+    height: 6rem;
+    width: 100%;
+    
+}
+.header_content form {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem 2rem;
+}
+.header_title {
+    color: white;
+}
+.input_j1, .input_j2, .btn_start {
+    color: white;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+.input_j1 input, .input_j2 input {
+    padding-bottom: 0.5rem;
+    padding-top: 0.4rem;
+    padding-right: 2rem;
+    padding-left: 0.5rem;
+
+    border-radius: 1rem;
+    font-size: 1.2rem;;
+}
+.btn_start button {
+    width: 6rem;
+    height: 2.2rem;
+
+    border-radius: 1rem;
+    font-size: 1.2rem;
+}
+.btn_start button:hover {
+    cursor: pointer;
+}
+
