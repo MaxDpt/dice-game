@@ -1,7 +1,7 @@
 .header_content {
     background-color: #362222;
     display: flex;
-    height: 7rem;
+    min-height: 7rem;
     width: 100%;
     letter-spacing: 1px;
     
@@ -15,12 +15,6 @@
 .header_title {
     color: white;
 }
-.input_j1, .input_j2, .btn_start {
-    color: white;
-    margin: auto;
-    font-size: 1.2rem;
-}
-
 .input_j1 input, .input_j2 input {
     padding-bottom: 0.5rem;
     padding-top: 0.4rem;
@@ -30,14 +24,23 @@
     border-radius: 1rem;
     font-size: 1.2rem;;
 }
-.btn_start button {
-    width: 6rem;
-    height: 2.2rem;
-
-    border-radius: 1rem;
-    font-size: 1.2rem;
+.input_j1, .input_j2, .btn_start {
+    color: white;
+    margin: auto;
+    font-size: 1.6rem;
 }
-.btn_start button:hover {
+.resultat_j1, .resultat_j2, .btn_restart {
+    color: white;
+    margin: auto;
+    font-size: 1.6rem;
+}
+
+.btn_start button, .btn_restart button {
+    padding: 1.5rem 4rem;
+    border-radius: 0.6rem;
+    font-size: 2rem;
+}
+.btn_start button:hover, .btn_restart button:hover {
     cursor: pointer;
 }
 

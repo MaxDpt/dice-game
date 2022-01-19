@@ -79,7 +79,7 @@ function Header() {
             <h1>Dice Game</h1>
           </div>
 
-          <div className='input_j1'>
+          <div className='resultat_j1'>
             {player1 ? ( 
                 <div>
                 <p>Player 1: {player1}</p>
@@ -93,7 +93,7 @@ function Header() {
             )}
           </div>
 
-          <div className='input_j2'>
+          <div className='resultat_j2'>
             {player2 ? ( 
                 <div>
                 <p>Player 2: {player2}</p>
@@ -107,7 +107,7 @@ function Header() {
             )}
           </div>
 
-          <div className='btn_start'>
+          <div className='btn_restart'>
             {player1, player2 ? (
                 <button onClick={restart} >Restart</button>
             ) : (
