@@ -4,6 +4,9 @@ import {useRef, useState} from 'react'
 
 function Header() {
 
+    const player1 = localStorage.getItem('Player1');
+    const player2 = localStorage.getItem('Player2');
+
 // INPUT READING -------------------------------
   const [newPlayer1, setNewPlayer1] = useState('');
   const [newPlayer2, setNewPlayer2] = useState('');
@@ -45,6 +48,7 @@ function Header() {
         localStorage.setItem('Player1', newPlayer1)
         localStorage.setItem('Player2', newPlayer2)
         formRef.current.reset();
+        window.location.reload();
       }
     } 
 
@@ -54,6 +58,20 @@ function Header() {
   }
 //------------------------------------------------
 
+// BUTTON RESTART --------------------------------
+  const restart = async (e) => {
+      try {
+        localStorage.removeItem('Player1');
+        localStorage.removeItem('Player2');
+        window.location.reload();
+      } catch {
+          console.log('error')
+      }
+  }
+//------------------------------------------------
+
+
+
     return (
         <div className='header_content'>
         <form ref={formRef} methode='POST' onSubmit={handleForm} className='form'>
@@ -62,17 +80,39 @@ function Header() {
           </div>
 
           <div className='input_j1'>
-            <label>nom : </label>
-            <input ref={addInputs} onChange={handleOnChange1} type='text' placeholder='Joueur 1'/>
+            {player1 ? ( 
+                <div>
+                <p>Player 1: {player1}</p>
+                <p>Victoires : </p>
+                </div>
+            ) : (
+                <div className='input_j1'>
+                <label>nom : </label>
+                <input ref={addInputs} onChange={handleOnChange1} type='text' placeholder='Joueur 1'/>
+                </div>
+            )}
           </div>
 
           <div className='input_j2'>
-            <label>nom : </label>
-            <input ref={addInputs} onChange={handleOnChange2} type='text' placeholder='Joueur 1'/>
+            {player2 ? ( 
+                <div>
+                <p>Player 2: {player2}</p>
+                <p>Victoires : </p>
+                </div>
+            ) : (
+                <div className='input_j2'>
+                <label>nom : </label>
+                <input ref={addInputs} onChange={handleOnChange2} type='text' placeholder='Joueur 2'/>
+                </div>
+            )}
           </div>
 
           <div className='btn_start'>
-            <button type='submit' disabled={!newPlayer1, !newPlayer2}>Start</button>
+            {player1, player2 ? (
+                <button onClick={restart} >Restart</button>
+            ) : (
+                <button type='submit' disabled={!newPlayer1, !newPlayer2}>Start</button>
+            )}
           </div>
         </form> 
         </div>
