@@ -1,5 +1,6 @@
 
 .globalPage_content {
+    visibility: visible;
     display: flex;
     width: 100%;
     min-height: 55rem;
@@ -13,10 +14,9 @@
     visibility: visible;
 }
 .hide-player {
-    background-color: lightgray;
+    background-color: gray;
     width: 30rem;
     bottom: 0;
-    visibility: hidden;
 }
 .titleScore {
     width: 90%;
@@ -32,3 +32,6 @@
 .dice {
     font-size: 6rem;
 }
+
+
+

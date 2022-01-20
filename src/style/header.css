@@ -13,6 +13,8 @@
     justify-content: space-between;
 }
 .header_title {
+    margin: auto;
+    margin-bottom: 1.1rem;
     color: white;
 }
 .input_j1 input, .input_j2 input {

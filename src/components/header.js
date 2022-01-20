@@ -6,6 +6,8 @@ function Header() {
 
     const player1 = localStorage.getItem('Player1');
     const player2 = localStorage.getItem('Player2');
+    var globalVictory1 = localStorage.getItem('GlobalVictory1');
+    var globalVictory2 = localStorage.getItem('GlobalVictory2');
 
 // INPUT READING -------------------------------
   const [newPlayer1, setNewPlayer1] = useState('');
@@ -48,10 +50,12 @@ function Header() {
         localStorage.setItem('Player1', newPlayer1)
         localStorage.setItem('CurrentScore1', 0)
         localStorage.setItem('GlobalScore1', 0)
+        localStorage.setItem('GlobalVictory1', 0);
 
         localStorage.setItem('Player2', newPlayer2)
         localStorage.setItem('CurrentScore2', 0)
         localStorage.setItem('GlobalScore2', 0)
+        localStorage.setItem('GlobalVictory2', 0);
 
         formRef.current.reset();
         window.location.reload();
@@ -68,7 +72,13 @@ function Header() {
   const restart = async (e) => {
       try {
         localStorage.removeItem('Player1');
+        localStorage.removeItem('CurrentScore1');
+        localStorage.removeItem('GlobalScore1');
+        localStorage.removeItem('GlobalVictory1');
         localStorage.removeItem('Player2');
+        localStorage.removeItem('CurrentScore2');
+        localStorage.removeItem('GlobalScore2');
+        localStorage.removeItem('GlobalVictory2');
         window.location.reload();
       } catch {
           console.log('error')
@@ -87,9 +97,9 @@ function Header() {
 
           <div className='resultat_j1'>
             {player1 ? ( 
-                <div>
-                <p>Player 1: {player1}</p>
-                <p>Victoires : </p>
+                <div> 
+                  <p>Player1 : {player1}</p>
+                  <p>Victory : {globalVictory1}</p>      
                 </div>
             ) : (
                 <div className='input_j1'>
@@ -102,8 +112,8 @@ function Header() {
           <div className='resultat_j2'>
             {player2 ? ( 
                 <div>
-                <p>Player 2: {player2}</p>
-                <p>Victoires : </p>
+                  <p>Player2 : {player2}</p>
+                  <p>Victory : {globalVictory2}</p>  
                 </div>
             ) : (
                 <div className='input_j2'>
