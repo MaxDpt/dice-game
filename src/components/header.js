@@ -46,7 +46,13 @@ function Header() {
     try {
       if (newPlayer1, newPlayer2) {
         localStorage.setItem('Player1', newPlayer1)
+        localStorage.setItem('CurrentScore1', 0)
+        localStorage.setItem('GlobalScore1', 0)
+
         localStorage.setItem('Player2', newPlayer2)
+        localStorage.setItem('CurrentScore2', 0)
+        localStorage.setItem('GlobalScore2', 0)
+
         formRef.current.reset();
         window.location.reload();
       }

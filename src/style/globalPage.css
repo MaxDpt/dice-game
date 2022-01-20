@@ -6,10 +6,17 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.player1, .player2 {
+.show-player1 , .show-player2  {
     background-color: lightgray;
     width: 30rem;
     bottom: 0;
+    visibility: visible;
+}
+.hide-player {
+    background-color: lightgray;
+    width: 30rem;
+    bottom: 0;
+    visibility: hidden;
 }
 .titleScore {
     width: 90%;
@@ -18,4 +25,10 @@
     font-size: 3rem;
     letter-spacing: 1px;
     border-bottom: solid 1px black;
+}
+.Score_content {
+    font-size: 2rem;
+}
+.dice {
+    font-size: 6rem;
 }
