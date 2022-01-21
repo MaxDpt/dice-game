@@ -48,13 +48,9 @@ function Header() {
     try {
       if (newPlayer1, newPlayer2) {
         localStorage.setItem('Player1', newPlayer1)
-        localStorage.setItem('CurrentScore1', 0)
-        localStorage.setItem('GlobalScore1', 0)
         localStorage.setItem('GlobalVictory1', 0);
 
         localStorage.setItem('Player2', newPlayer2)
-        localStorage.setItem('CurrentScore2', 0)
-        localStorage.setItem('GlobalScore2', 0)
         localStorage.setItem('GlobalVictory2', 0);
 
         formRef.current.reset();
@@ -98,8 +94,7 @@ function Header() {
           <div className='resultat_j1'>
             {player1 ? ( 
                 <div> 
-                  <p>Player1 : {player1}</p>
-                  <p>Victory : {globalVictory1}</p>      
+                  <p>VictoryP1 : {globalVictory1}</p>      
                 </div>
             ) : (
                 <div className='input_j1'>
@@ -112,8 +107,7 @@ function Header() {
           <div className='resultat_j2'>
             {player2 ? ( 
                 <div>
-                  <p>Player2 : {player2}</p>
-                  <p>Victory : {globalVictory2}</p>  
+                  <p>VictoryP2 : {globalVictory2}</p>  
                 </div>
             ) : (
                 <div className='input_j2'>
@@ -125,7 +119,7 @@ function Header() {
 
           <div className='btn_restart'>
             {player1, player2 ? (
-                <button onClick={restart} >Restart</button>
+                <button onClick={restart} >Exit</button>
             ) : (
                 <button type='submit' disabled={!newPlayer1, !newPlayer2}>Start</button>
             )}
