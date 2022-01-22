@@ -10,6 +10,8 @@ export default function GlobalPage() {
   var [currentPlayer, setCurrentPlayer] = useState(1);
   var [diceNumber, setDiceNumber] = useState(0);
   var [currentDice, setCurrentDice] = useState(0);
+  var [addScore1, setAddScore1] = useState(0);
+  var [addScore2, setAddScore2] = useState(0);  
   var [saving, setSaving] = useState(0);
 
   var namePlayer1 = localStorage.getItem('Player1');
@@ -59,6 +61,7 @@ export default function GlobalPage() {
             setCurrentDice(currentDice)
             if (currentDice !== 1) {
             var currentScore = diceNumber
+            setAddScore1(currentScore)
             console.log(diceNumber)
             var currentResult01 = parseInt(currentResultP1) + parseInt(currentScore)
             console.log(parseInt(currentResultP1), '+', parseInt(currentScore), '=', parseInt(currentResult01)  )
@@ -68,11 +71,12 @@ export default function GlobalPage() {
             setCurrentDice(currentDice)
             if (currentDice !== 1) {
             var currentScore = diceNumber
+            setAddScore2(currentScore)
             console.log('dice :',diceNumber)
             var currentResult02 = parseInt(currentResultP2) + parseInt(currentScore)
             console.log(parseInt(currentResultP2), '+', parseInt(currentScore), '=', parseInt(currentResult02))
             setCurrentResultP2(parseInt(currentResult02));    }};
-    // Victory 
+    // 
 
     // losing number
             if (currentPlayer == 1) {
@@ -87,8 +91,8 @@ export default function GlobalPage() {
               var Player = 1;
               setCurrentPlayer(Player)
             }}
-            } }, 200)   };
-        myLoop(40);
+            } }, 500)   };
+        myLoop(25);
       }}} catch {
           console.log('error')   };
   };
@@ -165,8 +169,32 @@ const saveScore = async () => {
     console.log('error')
   }
 }
-
 //------------------------------------------------
+// ADD SCORE ANIM --------------------------------
+AddScore()
+function AddScore() {
+  if (addScore1) {
+    (function myLoop(i) {
+      setTimeout(function() {
+        var addScore1 = 0;
+        setAddScore1(addScore1)               
+        if (--i) myLoop(i);   
+      }, 1500)
+    })(1);                   
+  }
+  if (addScore2) {
+    (function myLoop(i) {
+      setTimeout(function() {
+        var addScore2 = 0;
+        setAddScore2(addScore2)               
+        if (--i) myLoop(i);   
+      }, 1500)
+    })(1); 
+  }
+}
+// -----------------------------------------------
+
+
 
     return (
       <div className={`globalPage_content ${!currentPlayer ? "show-globalPage_content" : "hide-globalPage_content"} `}>
@@ -177,7 +205,7 @@ const saveScore = async () => {
                 <p>{namePlayer1}</p>
               </div>
             ) : (
-              <p>Joueur 1</p>
+              <p>Joueur 1</p> 
             )}
           </div>
           <div className='Score_content'>
@@ -198,15 +226,105 @@ const saveScore = async () => {
         </div>
 
       <div className='table'>
+        <div className='header_table'>
+        <div className={`addScore1 ${addScore1 ? "show-addScore1" : "hide-addScore"} `}>
+          <p>+{currentDice}</p>
+        </div>
+
         <div className='newPlay_btn'>
           <button onClick={newPlay} disabled={!win || !namePlayer1 || !namePlayer2}>New play</button>
         </div>
+
+        <div className={`addScore2 ${addScore2 ? "show-addScore2" : "hide-addScore"} `}>
+          <p>+{currentDice}</p>
+        </div>
+        </div>
+
+
         { !win ? (
+
           <div className='dice'>
-            {currentDice ? (<p>{currentDice}</p>) : (<p>{diceNumber}</p>)}
+          {!currentDice ? (
+          <div>
+          {diceNumber === 1 ? (
+          <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
+            <img src={require('../style/images/dice1.png')}/>
+          </div>
+          ) : ( null
+          )}
+          {diceNumber === 2 ? (
+          <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
+            <img src={require('../style/images/dice2.png')}/>
+          </div>
+          ) : ( null
+          )}
+          {diceNumber === 3 ? (
+          <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
+            <img src={require('../style/images/dice3.png')}/>
+          </div>
+          ) : ( null
+          )}
+          {diceNumber === 4 ? (
+          <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
+            <img src={require('../style/images/dice4.png')}/>
+          </div>
+          ) : ( null
+          )}
+          {diceNumber === 5 ? (
+          <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
+            <img src={require('../style/images/dice5.png')}/>
+          </div>
+          ) : ( null
+          )}
+          {diceNumber === 6 ? (
+          <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
+            <img src={require('../style/images/dice6.png')}/>
+          </div>
+          ) : ( null
+          )}
+          </div>
+          ) : null}
+
+          { currentDice === 1 ? (
+          <div className='currentDice'>
+            <img src={require('../style/images/dice1.png')}/>
+          </div>
+          ) : ( null
+          )}
+          { currentDice === 2 ? (
+          <div className='currentDice'>
+            <img src={require('../style/images/dice2.png')}/>
+          </div>
+          ) : ( null
+          )}
+          { currentDice === 3 ? (
+          <div className='currentDice'>
+            <img src={require('../style/images/dice3.png')}/>
+          </div>
+          ) : ( null
+          )}
+          { currentDice === 4 ? (
+          <div className='currentDice'>
+            <img src={require('../style/images/dice4.png')}/>
+          </div>
+          ) : ( null
+          )}
+          { currentDice === 5 ? (
+          <div className='currentDice'>
+            <img src={require('../style/images/dice5.png')}/>
+          </div>
+          ) : ( null
+          )}
+          { currentDice === 6 ? (
+          <div className='currentDice'>
+            <img src={require('../style/images/dice6.png')}/>
+          </div>
+          ) : ( null
+          )}
           </div>
         ) : ( null
         )}
+
         { winP1 ? (
           <div className='win'>
             <p>Player 1 Gagne !</p>
