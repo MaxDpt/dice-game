@@ -68,12 +68,8 @@ function Header() {
   const restart = async (e) => {
       try {
         localStorage.removeItem('Player1');
-        localStorage.removeItem('CurrentScore1');
-        localStorage.removeItem('GlobalScore1');
         localStorage.removeItem('GlobalVictory1');
         localStorage.removeItem('Player2');
-        localStorage.removeItem('CurrentScore2');
-        localStorage.removeItem('GlobalScore2');
         localStorage.removeItem('GlobalVictory2');
         window.location.reload();
       } catch {
