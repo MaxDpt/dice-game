@@ -11,7 +11,7 @@ export default function GlobalPage() {
   var [diceNumber, setDiceNumber] = useState(0);
   var [currentDice, setCurrentDice] = useState(0);
   var [addScore1, setAddScore1] = useState(0);
-  var [addScore2, setAddScore2] = useState(0);  
+  var [addScore2, setAddScore2] = useState(0);
   var [saving, setSaving] = useState(0);
 
   var namePlayer1 = localStorage.getItem('Player1');
@@ -76,9 +76,7 @@ export default function GlobalPage() {
             var currentResult02 = parseInt(currentResultP2) + parseInt(currentScore)
             console.log(parseInt(currentResultP2), '+', parseInt(currentScore), '=', parseInt(currentResult02))
             setCurrentResultP2(parseInt(currentResult02));    }};
-    // 
-
-    // losing number
+    // losing number 1
             if (currentPlayer == 1) {
             if (currentDice == 1) {
               setCurrentResultP1(0)
@@ -91,8 +89,8 @@ export default function GlobalPage() {
               var Player = 1;
               setCurrentPlayer(Player)
             }}
-            } }, 500)   };
-        myLoop(25);
+            } }, 300)   };
+        myLoop(15);
       }}} catch {
           console.log('error')   };
   };
@@ -161,7 +159,7 @@ const saveScore = async () => {
             var winnerP2 = 1;
             setWinP2(winnerP2);
             var victoryP2 = (parseInt(globalVictory2) + 1);
-            localStorage.setItem('GlobalVictory1', (parseInt(victoryP2)))
+            localStorage.setItem('GlobalVictory2', (parseInt(victoryP2)))
             }
         }
 
@@ -176,8 +174,7 @@ function AddScore() {
   if (addScore1) {
     (function myLoop(i) {
       setTimeout(function() {
-        var addScore1 = 0;
-        setAddScore1(addScore1)               
+        setAddScore1(0)               
         if (--i) myLoop(i);   
       }, 1500)
     })(1);                   
@@ -185,16 +182,13 @@ function AddScore() {
   if (addScore2) {
     (function myLoop(i) {
       setTimeout(function() {
-        var addScore2 = 0;
-        setAddScore2(addScore2)               
+        setAddScore2(0)               
         if (--i) myLoop(i);   
       }, 1500)
     })(1); 
   }
 }
 // -----------------------------------------------
-
-
 
     return (
       <div className={`globalPage_content ${!currentPlayer ? "show-globalPage_content" : "hide-globalPage_content"} `}>
@@ -227,22 +221,20 @@ function AddScore() {
 
       <div className='table'>
         <div className='header_table'>
-        <div className={`addScore1 ${addScore1 ? "show-addScore1" : "hide-addScore"} `}>
-          <p>+{currentDice}</p>
-        </div>
+          <div className={`addScore1 ${addScore1 ? "show-addScore1" : "hide-addScore"} `}>
+          <p>+{currentDice}</p> 
+          </div>
 
         <div className='newPlay_btn'>
           <button onClick={newPlay} disabled={!win || !namePlayer1 || !namePlayer2}>New play</button>
         </div>
-
+        
         <div className={`addScore2 ${addScore2 ? "show-addScore2" : "hide-addScore"} `}>
-          <p>+{currentDice}</p>
+        <p>+{currentDice}</p>
+        </div>) 
         </div>
-        </div>
-
 
         { !win ? (
-
           <div className='dice'>
           {!currentDice ? (
           <div>
@@ -326,14 +318,14 @@ function AddScore() {
         )}
 
         { winP1 ? (
-          <div className='win'>
-            <p>Player 1 Gagne !</p>
+          <div className={`win ${win ? "show-win" : "hide-win"} `}>
+            <p>{namePlayer1} <br/> win the party !</p>
           </div>
         ) : ( null
         )}
         { winP2 ? (
-          <div className='win'>
-            <p>Player 2 Gagne !</p>
+          <div className={`win ${win ? "show-win" : "hide-win"} `}>
+            <p>{namePlayer2} <br/> win the party !</p>
           </div>
         ) : ( null
         )}
