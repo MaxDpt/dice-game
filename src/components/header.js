@@ -78,8 +78,6 @@ function Header() {
   }
 //------------------------------------------------
 
-
-
     return (
         <div className='header_content'>
         <form ref={formRef} methode='POST' onSubmit={handleForm} className='form'>

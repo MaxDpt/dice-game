@@ -180,7 +180,7 @@ AddScore()
 //------------------------------------------------
     return (
       <div className={`globalPage_content ${!currentPlayer ? "show-globalPage_content" : "hide-globalPage_content"} `}>
-        <div className={`player1 ${currentPlayer ? "show-player1" : "hide-player1"} `}>
+<div className={`player1 ${currentPlayer ? "show-player1" : "hide-player1"} `}>
           <div className='titleScore'>
             {namePlayer1 ? (
               <div>
@@ -194,15 +194,39 @@ AddScore()
             <p>Global Score : {globalResultP1}</p>
             <p>Current Score : {currentResultP1}</p>
             <div className='rollDice_btn'>
-<button onClick={rollDice} disabled={win || saving || !currentPlayer || !namePlayer1}> Roll Dice </button>
+<button onClick={rollDice} disabled={win || saving || !currentPlayer || !namePlayer1}>
+<div className='content-button'>
+  <p>Roll dice</p>
+  <svg id='icon' xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-dice-2" viewBox="0 0 16 16">
+  <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+  <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg>
+  </div>
+</button>
           </div>
 
             <div className='switchPlayer_btn'>
-<button onClick={saveScore} disabled={win ||!currentPlayer || !namePlayer1}>Save score</button>
+<button onClick={saveScore} disabled={win ||!currentPlayer || !namePlayer1}>
+<div className='content-button'>
+  <p>Save score</p>
+  <svg id='icon' xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+  </svg>
+  </div>
+</button>
             </div>
 
             <div className='switchPlayer_btn'>
-<button onClick={switchPlayer} disabled={globalResultP1 >= gameOver || win || !saving ||!currentPlayer || !namePlayer1}>Switch player</button>
+<button onClick={switchPlayer} disabled={globalResultP1 >= gameOver || win || !saving ||!currentPlayer || !namePlayer1}>
+  <div className='content-button'>
+  <p>Switch player</p>
+  <svg id='icon' xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+  </svg>
+  </div>
+</button>
             </div>
           </div>
         </div>
@@ -213,7 +237,7 @@ AddScore()
           <p>+{currentDice}</p> 
           </div>
 
-<div className='newPlay_btn'>
+<div className={`newPlay_btn ${win ? "show-newPlay_btn" : "hide-newPlay_btn"} `}>
         <button onClick={newPlay} disabled={!win || !namePlayer1 || !namePlayer2}> New play </button>
         </div>
         
@@ -228,37 +252,55 @@ AddScore()
           <div>
           {diceNumber === 1 ? (
           <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
-            <img src={require('../style/images/dice1.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-1" viewBox="0 0 16 16">
+              <circle cx="8" cy="8" r="1.5"/>
+              <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           {diceNumber === 2 ? (
           <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
-            <img src={require('../style/images/dice2.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-2" viewBox="0 0 16 16">
+              <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+              <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           {diceNumber === 3 ? (
           <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
-            <img src={require('../style/images/dice3.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-3" viewBox="0 0 16 16">
+              <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+              <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           {diceNumber === 4 ? (
           <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
-            <img src={require('../style/images/dice4.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-4" viewBox="0 0 16 16">
+            <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           {diceNumber === 5 ? (
           <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
-            <img src={require('../style/images/dice5.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-5" viewBox="0 0 16 16">
+            <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           {diceNumber === 6 ? (
           <div className={`dice ${diceNumber || currentDice != 0 ? "show-dice" : "hide-dice"} `}>
-            <img src={require('../style/images/dice6.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-6" viewBox="0 0 16 16">
+            <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
@@ -267,37 +309,55 @@ AddScore()
 
           { currentDice === 1 ? (
           <div className='currentDice'>
-            <img src={require('../style/images/dice1.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-1" viewBox="0 0 16 16">
+              <circle cx="8" cy="8" r="1.5"/>
+              <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           { currentDice === 2 ? (
           <div className='currentDice'>
-            <img src={require('../style/images/dice2.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-2" viewBox="0 0 16 16">
+              <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+              <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           { currentDice === 3 ? (
           <div className='currentDice'>
-            <img src={require('../style/images/dice3.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-3" viewBox="0 0 16 16">
+              <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+              <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           { currentDice === 4 ? (
           <div className='currentDice'>
-            <img src={require('../style/images/dice4.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-4" viewBox="0 0 16 16">
+            <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           { currentDice === 5 ? (
           <div className='currentDice'>
-            <img src={require('../style/images/dice5.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-5" viewBox="0 0 16 16">
+            <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm4-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
           { currentDice === 6 ? (
           <div className='currentDice'>
-            <img src={require('../style/images/dice6.png')}/>
+            <svg id='dice' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-6" viewBox="0 0 16 16">
+            <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+            <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            </svg>
           </div>
           ) : ( null
           )}
@@ -319,7 +379,7 @@ AddScore()
         )}
       </div>
 
-      <div className={`player2 ${!currentPlayer ? "show-player2" : "hide-player2"} `}>
+<div className={`player2 ${!currentPlayer ? "show-player2" : "hide-player2"} `}>
         <div className='titleScore'>
           {namePlayer2 ? (<p>{namePlayer2}</p>) : (<p>Joueur 2</p>)}
         </div>
@@ -328,13 +388,37 @@ AddScore()
           <p>{globalResultP2} : Global Score</p>
           <p>{currentResultP2} : Current Score</p>
         <div className='rollDice_btn'>
-<button onClick={rollDice} disabled={win || saving || currentPlayer || !namePlayer2}> Roll Dice </button>
+<button onClick={rollDice} disabled={win || saving || currentPlayer || !namePlayer2}>
+<div className='content-button'>
+  <svg id='icon' xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-dice-2" viewBox="0 0 16 16">
+  <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
+  <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+  </svg>
+  <p>Roll dice</p>
+  </div>
+</button>
         </div>
         <div className='switchPlayer_btn'>
-<button onClick={saveScore} disabled={win || currentPlayer || !namePlayer2}>Save score</button>
+<button onClick={saveScore} disabled={win || currentPlayer || !namePlayer2}>
+<div className='content-button'>
+<svg id='icon' xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+  </svg>
+  <p>Save score</p>
+  </div>
+</button>
         </div>
         <div className='switchPlayer_btn'>
-<button onClick={switchPlayer} disabled={globalResultP2 >= gameOver|| !saving || win || currentPlayer || !namePlayer2}>Switch player</button>
+<button onClick={switchPlayer} disabled={globalResultP2 >= gameOver|| !saving || win || currentPlayer || !namePlayer2}>
+<div className='content-button'>
+<svg id='icon' xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+  </svg>
+  <p>Switch player</p>
+  </div>
+</button>
         </div>
       </div>
     </div> 

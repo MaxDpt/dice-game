@@ -1,5 +1,5 @@
 .header_content {
-    background-color: #5c2424;
+    background-color: #2d3d5f;
     display: flex;
     min-height: 7rem;
     width: 100%;
@@ -38,7 +38,7 @@
 }
 
 .btn_start button, .btn_restart button {
-    background-color: #FF6363;
+    background-color: #7aa6ff;
     width: 15rem;
     border: none;
     color: white;
@@ -48,7 +48,7 @@
     transition: all .2s ease-in-out;
 }
 .btn_start button:hover, .btn_restart button:hover {
-    background-color: #fcaeae;
+    background-color: #bed4ff;
     cursor: pointer;
     color: #ebf7ff;
     transition: all .2s ease-in-out;
