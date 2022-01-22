@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function GlobalPage() {
 // DATA -----------------------------------------
-  var gameOver = 50;
+  var gameOver = 20;
   var [winP1, setWinP1] = useState(0);
   var [winP2, setWinP2] = useState(0);
   var [win, setWin] = useState(0);
@@ -16,12 +16,12 @@ export default function GlobalPage() {
 
   var namePlayer1 = localStorage.getItem('Player1');
   var globalVictory1 = localStorage.getItem('GlobalVictory1');
-  var [globalResultP1, setGlobalResultP1] = useState(40);
+  var [globalResultP1, setGlobalResultP1] = useState(0);
   var [currentResultP1, setCurrentResultP1] = useState(0);
   
   var namePlayer2 = localStorage.getItem('Player2');
   var globalVictory2 = localStorage.getItem('GlobalVictory2');
-  var [globalResultP2, setGlobalResultP2] = useState(40);
+  var [globalResultP2, setGlobalResultP2] = useState(0);
   var [currentResultP2, setCurrentResultP2] = useState(0);
 
 // BUTTON RESTART --------------------------------
@@ -238,12 +238,12 @@ AddScore()
           </div>
 
 <div className={`newPlay_btn ${win ? "show-newPlay_btn" : "hide-newPlay_btn"} `}>
-        <button onClick={newPlay} disabled={!win || !namePlayer1 || !namePlayer2}> New play </button>
+        <button onClick={newPlay} disabled={!win || !namePlayer1 || !namePlayer2}>New play</button>
         </div>
         
 <div className={`addScore2 ${addScore2 ? "show-addScore2" : "hide-addScore"} `}>
         <p>+{currentDice}</p>
-        </div>) 
+        </div> 
         </div>
 
 { !win ? (
