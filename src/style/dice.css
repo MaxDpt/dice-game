@@ -14,15 +14,24 @@
     background: white;
     border-radius: 4rem;
 }
+.currentDice {
+    display: flex;
+    margin-top: 20rem;
+    animation: shake 1s;
+}
 @keyframes shake {
 
 	100% {
 		transform: rotate(1090deg);
 	}
 }
-
-.currentDice {
-    display: flex;
-    margin-top: 20rem;
-    animation: shake 1s;
+@media screen and (max-width: 1400px) {
+    #dice {
+        display: flex;
+        width: 15rem;
+        height: 15rem;
+        color: #7aa6ff;
+        background: white;
+        border-radius: 3rem;
+    }
 }

@@ -1,7 +1,7 @@
 .header_content {
     background-color: #2d3d5f;
     display: flex;
-    min-height: 7rem;
+    min-height: 4rem;
     width: 100%;
     letter-spacing: 1px;
     
@@ -59,4 +59,17 @@
     box-shadow: 0px 2px 10px 2px #393E46;
     cursor: not-allowed;
     transition: all .2s ease-in-out;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .btn_start button, .btn_restart button {
+        width: 8rem;
+        padding-left: 1.5rem;
+    }
+
+    .input_j1 input, .input_j2 input {
+        width: 10rem;
+
+    }
 }

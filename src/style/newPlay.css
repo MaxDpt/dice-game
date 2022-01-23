@@ -48,3 +48,19 @@
    40%   {opacity:0; }
    100% { opacity:1; }
  }
+
+ @media screen and (max-width: 1400px) {
+    .newPlay_btn {
+        width: 15rem;
+
+    }
+    .show-newPlay_btn {
+        display: flex;
+
+    }
+    .newPlay_btn button {
+        width: 15rem;
+        height: 6rem;
+
+    }
+ }
