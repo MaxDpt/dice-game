@@ -88,12 +88,12 @@ function Header() {
           <div className='resultat_j1'>
             {player1 ? ( 
                 <div> 
-                  <p>VictoryP1 : {globalVictory1}</p>      
+                  <p>Victory P1: {globalVictory1}</p>      
                 </div>
             ) : (
                 <div className='input_j1'>
-                <label>nom : </label>
-                <input ref={addInputs} onChange={handleOnChange1} type='text' placeholder='Joueur 1'/>
+                <label>Name : </label>
+                <input ref={addInputs} onChange={handleOnChange1} type='text' placeholder='player 1'/>
                 </div>
             )}
           </div>
@@ -101,12 +101,12 @@ function Header() {
           <div className='resultat_j2'>
             {player2 ? ( 
                 <div>
-                  <p>VictoryP2 : {globalVictory2}</p>  
+                  <p>Victory P2: {globalVictory2}</p>  
                 </div>
             ) : (
                 <div className='input_j2'>
-                <label>nom : </label>
-                <input ref={addInputs} onChange={handleOnChange2} type='text' placeholder='Joueur 2'/>
+                <label>Name : </label>
+                <input ref={addInputs} onChange={handleOnChange2} type='text' placeholder='player 2'/>
                 </div>
             )}
           </div>
