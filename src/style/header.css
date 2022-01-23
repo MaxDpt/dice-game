@@ -17,15 +17,57 @@
     margin-bottom: 1.1rem;
     color: white;
 }
+
+
+
+
 .input_j1 input, .input_j2 input {
+    background-color: #2d3d5f;
+    color: white;
     padding-bottom: 0.5rem;
     padding-top: 0.4rem;
     padding-right: 2rem;
     padding-left: 0.5rem;
 
+    border: solid 1px white;
     border-radius: 1rem;
     font-size: 1.2rem;;
 }
+
+.input_j1 input, .input_j2 input  {
+    animation-duration: .9s;
+    animation-name: input;
+    animation-iteration-count: infinite;
+    transition: none;
+ }
+ 
+@keyframes input {
+    0%   { box-shadow: 0px 0px 1px 1px #bed4ff; }
+    40%   {box-shadow: 0px 0px 10px 2px #bed4ff;}
+    100% { box-shadow: 0px 0px 1px 1px #bed4ff; }
+  }
+
+
+@media screen and (max-width: 1400px) {
+    #dice {
+        display: flex;
+        width: 15rem;
+        height: 15rem;
+        color: #7aa6ff;
+        background: white;
+        border-radius: 3rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 .input_j1, .input_j2, .btn_start {
     color: white;
     margin: auto;

@@ -97,4 +97,26 @@
     .Score_content button, .Score_content button {
         font-size: 1.5rem;
     }
+    .Score_content {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-height: 800px) {
+    .hide-player1, .hide-player2 {
+      
+        
+        height: 45rem;
+
+    }
+    .show-player1 , .show-player2 {
+        
+        height: 45rem;
+    }
+
+    .Score_content button, .Score_content button {
+        height: 6rem;
+    }
+}
 }

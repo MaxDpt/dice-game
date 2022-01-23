@@ -263,7 +263,7 @@ return (
     </div>
 
 
-      <div className={`player2 ${!currentPlayer ? "show-player2" : "hide-player2"} `}>
+    <div className={`player2 ${!currentPlayer ? "show-player2" : "hide-player2"} `}>
       <div className='titleScore'>
         {namePlayer2 ? (<p>{namePlayer2}</p>) : (<p>Player 2</p>)}
       </div>
@@ -288,8 +288,8 @@ return (
           <button onClick={switchPlayer} disabled={globalResultP2 >= gameOver|| !saving || win || currentPlayer || !namePlayer2}>
             <div className='content-button'><IconSwitch/><p>Switch player</p></div>
           </button>
+        </div>
       </div>
-    </div>
-  </div> 
+    </div> 
 </div>
 )}
