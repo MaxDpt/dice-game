@@ -15,7 +15,7 @@ import IconTrophy from './Icon/iconTrophy';
 
 export default function GlobalPage() {
 // DATA -----------------------------------------
-  var gameOver = 5;
+  var gameOver = 50;
   var [winP1, setWinP1] = useState(0);
   var [winP2, setWinP2] = useState(0);
   var [win, setWin] = useState(0);
