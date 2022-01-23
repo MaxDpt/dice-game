@@ -20,7 +20,7 @@ export default function GlobalPage() {
   var [winP2, setWinP2] = useState(0);
   var [win, setWin] = useState(0);
   var [currentPlayer, setCurrentPlayer] = useState(1);
-  var [diceNumber, setDiceNumber] = useState(0);
+  var [diceNumber, setDiceNumber] = useState(1);
   var [currentDice, setCurrentDice] = useState(1);
   var [addScore1, setAddScore1] = useState(0);
   var [addScore2, setAddScore2] = useState(0);
@@ -194,13 +194,7 @@ return (
   <div className={`globalPage_content ${!currentPlayer ? "show-globalPage_content" : "hide-globalPage_content"} `}>
     <div className={`player1 ${currentPlayer ? "show-player1" : "hide-player1"} `}>
       <div className='titleScore'>
-        {namePlayer1 ? (
-          <div>
-            <p>{namePlayer1}</p>
-          </div>
-        ) : (
-          <p>Joueur 1</p> 
-        )}
+        {namePlayer1 ? (<div><p>{namePlayer1}</p></div>) : (<p>Player 1</p> )}
       </div>
       <div className='Score_content'>
         <p>Global Score : {globalResultP1}</p>
@@ -208,28 +202,19 @@ return (
 
         <div className='rollDice_btn'>
           <button onClick={rollDice} disabled={win || saving || !currentPlayer || !namePlayer1}>
-            <div className='content-button'>
-              <p>Roll dice</p>
-              <IconDice />
-            </div>
+            <div className='content-button'> <p>Roll dice</p> <IconDice /> </div>
           </button>
         </div>
 
         <div className='saveScore_btn'>
           <button onClick={saveScore} disabled={win ||!currentPlayer || !namePlayer1}>
-            <div className='content-button'>
-              <p>Save score</p>
-              <IconSave />
-            </div>
+            <div className='content-button'> <p>Save score</p> <IconSave /> </div>
           </button>
         </div>
 
         <div className='switchPlayer_btn'>
           <button onClick={switchPlayer} disabled={globalResultP1 >= gameOver || win || !saving ||!currentPlayer || !namePlayer1}>
-            <div className='content-button'>
-              <p>Switch player</p>
-              <IconSwitch />
-            </div>
+            <div className='content-button'> <p>Switch player</p> <IconSwitch /> </div>
           </button>
         </div>
       </div>
@@ -278,42 +263,33 @@ return (
     </div>
 
 
-    <div className={`player2 ${!currentPlayer ? "show-player2" : "hide-player2"} `}>
-    <div className='titleScore'>
-      {namePlayer2 ? (<p>{namePlayer2}</p>) : (<p>Joueur 2</p>)}
-    </div>
-
-    <div className='Score_content'>
-      <p>{globalResultP2} : Global Score</p>
-      <p>{currentResultP2} : Current Score</p>
-
-      <div className='rollDice_btn'>
-        <button onClick={rollDice} disabled={win || saving || currentPlayer || !namePlayer2}>
-          <div className='content-button'>
-            <IconDice/>
-            <p>Roll dice</p>
-          </div>
-        </button>
+      <div className={`player2 ${!currentPlayer ? "show-player2" : "hide-player2"} `}>
+      <div className='titleScore'>
+        {namePlayer2 ? (<p>{namePlayer2}</p>) : (<p>Player 2</p>)}
       </div>
 
-      <div className='switchPlayer_btn'>
-        <button onClick={saveScore} disabled={win || currentPlayer || !namePlayer2}>
-        <div className='content-button'>
-            <IconSave/>
-          <p>Save score</p>
-          </div>
-        </button>
-      </div>
+      <div className='Score_content'>
+        <p>{globalResultP2} : Global Score</p>
+        <p>{currentResultP2} : Current Score</p>
 
-      <div className='switchPlayer_btn'>
-        <button onClick={switchPlayer} disabled={globalResultP2 >= gameOver|| !saving || win || currentPlayer || !namePlayer2}>
-          <div className='content-button'>
-            <IconSwitch/>
-            <p>Switch player</p>
-          </div>
-        </button>
+        <div className='rollDice_btn'>
+          <button onClick={rollDice} disabled={win || saving || currentPlayer || !namePlayer2}>
+            <div className='content-button'><IconDice/><p>Roll dice</p></div>
+          </button>
+        </div>
+
+        <div className='switchPlayer_btn'>
+          <button onClick={saveScore} disabled={win || currentPlayer || !namePlayer2}>
+          <div className='content-button'><IconSave/><p>Save score</p></div>
+          </button>
+        </div>
+
+        <div className='switchPlayer_btn'>
+          <button onClick={switchPlayer} disabled={globalResultP2 >= gameOver|| !saving || win || currentPlayer || !namePlayer2}>
+            <div className='content-button'><IconSwitch/><p>Switch player</p></div>
+          </button>
+      </div>
     </div>
-  </div>
-    </div> 
-  </div>
+  </div> 
+</div>
 )}
