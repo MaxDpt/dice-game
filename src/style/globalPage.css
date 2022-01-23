@@ -35,13 +35,13 @@
     .show-globalPage_content {
 
         width: 100%;
-        height: 45rem;
+        height: 100%;
 
     }
     .hide-globalPage_content {
 
         width: 100%;
-        height: 45rem;
+        height: 100%;
     }
 }
 
