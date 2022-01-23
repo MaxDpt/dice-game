@@ -95,6 +95,7 @@
     }
     .Score_content button, .Score_content button {
         font-size: 1.5rem;
+        height: 6rem;
     }
     .Score_content {
     font-size: 2rem;
