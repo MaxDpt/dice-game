@@ -1,0 +1,66 @@
+.show-win {
+    display: flex;
+    justify-content: center;
+    margin-top: 20rem;
+
+}
+
+.win  {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin: auto;
+    margin-top: 15rem;
+    font-size: 4rem;
+    background-color: none;
+    color: none;
+    box-shadow: 0px 2px 10px 2px #393E46;
+    border-radius: 1rem;
+    width: 36rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    transition: all .6s ease-in-out;
+    animation-name: size;
+    animation-iteration-count: infinite;
+ }
+ .win p {
+     margin: auto;
+ }
+ .winHead {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+ }
+
+.show-win  {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 15rem;
+    font-size: 4rem;
+    background-color: #7aa6ff;
+    color: white;
+    box-shadow: 0px 2px 10px 2px #393E46;
+    border-radius: 1rem;
+    width: 36rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    transition: all .6s ease-in-out;
+    animation-duration: 2s;
+    animation-name: size;
+    animation-iteration-count: infinite;
+    transition: none;
+ }
+ @keyframes size {
+    0% {
+        transform: scale(1);
+    }
+
+	50% {
+		transform: scale(1.1);
+	}
+    100% {
+        transform: scale(1);
+    }
+}

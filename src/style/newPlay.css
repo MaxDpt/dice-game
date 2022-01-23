@@ -1,0 +1,50 @@
+.newPlay_btn {
+    max-width: 60rem;
+    min-width: 10rem;
+    display: flex;
+    justify-content: center;
+    margin-right: -20rem;
+}
+.show-newPlay_btn {
+    display: flex;
+    justify-content: center;
+    margin-right: 0rem;
+}
+.newPlay_btn button {
+    background-color: #7aa6ff;
+    color: white;
+    box-shadow: 0px 2px 10px 2px #393E46;
+    font-size: 2.4rem;
+    width: 20rem;
+    height: 6rem;
+    border-radius: 0 0 2rem 2rem;
+    border: none;
+    transition: all .3s ease-in-out;
+    padding-bottom: 0.8rem;
+}
+.newPlay_btn button:hover {
+    cursor: pointer;
+    background-color: #bed4ff;
+    box-shadow: none;
+    color: #ebf7ff;
+    transition: all .2s ease-in-out;
+}
+.newPlay_btn button:disabled {
+    background-color: #607091;
+    color: #a8a7a4;
+    box-shadow: 0px 2px 10px 2px #393E46;
+    cursor: not-allowed;
+    transition: all .2s ease-in-out;
+}
+
+.show-newPlay_btn button  {
+    animation-duration: .9s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+ }
+ @keyframes clignoter {
+   0%   { opacity:1; }
+   40%   {opacity:0; }
+   100% { opacity:1; }
+ }
