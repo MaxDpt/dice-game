@@ -4,9 +4,10 @@
     box-shadow: 0px 2px 10px 2px #393E46;
     max-width: 30rem;
     min-width: 10rem;
-    height: 100%;
-    margin-bottom: 0;
-    bottom: 0;
+    min-height : calc(100vh - 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     visibility: visible;
     transition: all .6s ease-in-out;
 }
@@ -16,14 +17,15 @@
     color: #74726c;
     max-width: 30rem;
     min-width: 10rem;
-    height: 100%;
-    margin-bottom: 0;
-    bottom: 0;
+    min-height : calc(100vh - 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: all .5s ease-in-out;
 }
 .titleScore {
     width: 90%;
-    min-height: 7rem;
+    max-height: 7rem;
     margin: auto;
     font-size: 3rem;
     letter-spacing: 1px;
@@ -103,20 +105,21 @@
     flex-direction: column;
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (max-width: 800px) {
     .hide-player1, .hide-player2 {
-      
-        
+        max-width: 12rem;
         height: 100%;
 
     }
     .show-player1 , .show-player2 {
-        
+        max-width: 12rem;
         height: 100%;
     }
-
-    .Score_content button, .Score_content button {
-        height: 6rem;
+    .Score_content {
+        font-size: 1.2rem;
     }
-}
-}
+    .titleScore {
+        width: 90%;
+        font-size: 1.8rem;
+    }
+}}
